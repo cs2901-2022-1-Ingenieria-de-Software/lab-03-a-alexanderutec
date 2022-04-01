@@ -29,8 +29,11 @@ public class ManageDemandTest {
     public void test_AllOrdersFromPeru() {
         List<Order> ordersFromPeru = TestUtil.buildOrdersPeru();
 //        double result = ManageDemandCalculator::calculateTotal(ordersFromPeru, tax);
-        double result =calculator.calculateTotal(ordersFromPeru, tax);
-        Assert.assertEquals(Math.round(result), 7.0);
+        double result1 =calculator.calculateTotal(ordersFromPeru, tax);
+        Assert.assertEquals(Math.round(result1), 7.0);
+        List<Order> ordersFromColombia = TestUtil.buildOrdersColombia();
+        double result2 =calculator.calculateTotal(ordersFromColombia, tax);
+        Assert.assertEquals(Math.round(result2), 0.0);
     }
 
     public void testCalculateTotalForWithAdditionalByCountry() {
